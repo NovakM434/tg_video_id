@@ -1,13 +1,14 @@
 version: "3.8"
 
 services:
-  tg_bot_craft:
+  tg_video:
     build: .
     command: /bin/bash -c "alembic upgrade head && python main.py"
     restart: always
     environment:
       API_ID: ${API_ID}
       API_HASH: ${API_HASH}
+      PHONE_NUMBER: ${PHONE_NUMBER}
     volumes:
       - ./tg_video:/tg_video/tg_video_volumes
     depends_on:
