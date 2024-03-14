@@ -14,7 +14,7 @@ ENV PYTHONUNBUFFERED=1 \
 
 ENV PATH="$POETRY_HOME/bin:$VENV_PATH/bin:$PATH"
 
-WORKDIR /tg_bot_craft
+WORKDIR /tg_video
 
 RUN apt-get update
 RUN pip install --upgrade pip \
