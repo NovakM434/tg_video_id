@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "tg_video"
+version = "0.1.0"
+description = ""
+authors = ["Roman Babaev <novakromanov@yandex.ru>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+environs = "^11.0.0"
+pyrogram = "^2.0.106"
+aioredis = "^2.0.1"
+aioscheduler = "^1.4.2"
+alembic = "^1.13.0"
+asyncpg = "^0.29.0"
+sqlalchemy = "^2.0.28"
+psycopg2 = "^2.9.9"
+greenlet = "^3.0.3"
+
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
