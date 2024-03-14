@@ -10,8 +10,8 @@ services:
       API_ID: ${API_ID}
       API_HASH: ${API_HASH}
       PHONE_NUMBER: ${PHONE_NUMBER}
-      DB_HOST: ${DB_HOST}
-      DB_PORT: ${DB_PORT}
+      DB_HOST: tg_video_db
+      DB_PORT: 5432
       DB_NAME: ${DB_NAME}
       DB_USER: ${DB_USER}
       DB_PASS: ${DB_PASS}
@@ -28,7 +28,7 @@ services:
     image: postgres
     container_name: tg_video_db
     volumes:
-      - /var/lib/postgresql
+      - db_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     environment:
@@ -38,7 +38,10 @@ services:
     env_file:
       - .env
     networks:
-      - tg_video_db
+      - tg_video_network
+
+volumes:
+  db_data:
 
 networks:
   tg_video_network:
