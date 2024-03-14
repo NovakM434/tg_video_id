@@ -12,11 +12,13 @@ services:
     volumes:
       - ./tg_video:/tg_video/tg_video_volumes
     depends_on:
-      - db
+      - tg_video_db
+    networks:
+      - tg_video_network
 
-  db:
+  tg_video_db:
     image: postgres
-    container_name: db
+    container_name: tg_video_db
     volumes:
       - db:/var/lib/postgresql/data
     ports:
@@ -28,5 +30,6 @@ services:
     env_file:
       - .env
 
-volumes:
-  db:
+networks:
+  tg_video_network:
+    name: tg_video_network
